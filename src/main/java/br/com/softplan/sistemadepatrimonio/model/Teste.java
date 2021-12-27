@@ -19,8 +19,8 @@ public class Teste {
 //		ResponsavelEntity ObjResponsavel = new ResponsavelEntity();
 //		SetorEntity ObjSetor = new SetorEntity();
 //		TipoEquipamentoEntity ObjTipoEquipamento = new TipoEquipamentoEntity();
-//		UsuarioEntity ObjUsuario = new UsuarioEntity();
-//		
+//		UsuarioEntity ObjUsuario = new UsuarioEntity("Wagner","123456");
+		
 		System.out.println("Feito");
 		System.out.println();
 		

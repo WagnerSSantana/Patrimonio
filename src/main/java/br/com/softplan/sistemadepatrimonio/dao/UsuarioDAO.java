@@ -15,6 +15,7 @@ public class UsuarioDAO {
 	private final EntityManager em;
 	
 	public UsuarioDAO (EntityManager em) {
+		
 		this.em = em;
 	}
 	

@@ -26,6 +26,25 @@ public class UsuarioEntity {
 	@Enumerated (EnumType.STRING)
 	private NivelDeAcesso nivel;
 
+	
+	
+	public UsuarioEntity() {
+
+	}
+
+	public UsuarioEntity(String nome, String senha) {
+		this.nome = nome;
+		this.senha = senha;
+	}
+	
+
+
+	public UsuarioEntity(String nome, String senha, NivelDeAcesso nivel) {
+		this.nome = nome;
+		this.senha = senha;
+		this.nivel = nivel;
+	}
+
 	public long getId() {
 		return id;
 	}

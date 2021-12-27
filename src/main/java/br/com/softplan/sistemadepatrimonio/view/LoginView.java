@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class TelaLogin extends JFrame {
+public class LoginView extends JFrame {
 
 	/**
 	 * 
@@ -39,7 +39,7 @@ public class TelaLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaLogin frame = new TelaLogin();
+					LoginView frame = new LoginView();
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -52,7 +52,7 @@ public class TelaLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaLogin() {
+	public LoginView() {
 		setUndecorated(true);
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -133,6 +133,15 @@ public class TelaLogin extends JFrame {
 		panel_1.add(txtSenha);
 
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				MenuView telaMenu = new MenuView();
+				telaMenu.setVisible(true);
+			}
+		});
 		btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnEntrar.setBounds(180, 265, 120, 25);
 		panel_1.add(btnEntrar);
@@ -156,4 +165,22 @@ public class TelaLogin extends JFrame {
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setFont(new Font("Segoe UI", Font.BOLD, 14));
 	}
+
+	public JPasswordField getTxtSenha() {
+		return txtSenha;
+	}
+
+	public void setTxtSenha(JPasswordField txtSenha) {
+		this.txtSenha = txtSenha;
+	}
+
+	public JTextField getTxtUsuario() {
+		return txtUsuario;
+	}
+
+	public void setTxtUsuario(JTextField txtUsuario) {
+		this.txtUsuario = txtUsuario;
+	}
+	
+	
 }
