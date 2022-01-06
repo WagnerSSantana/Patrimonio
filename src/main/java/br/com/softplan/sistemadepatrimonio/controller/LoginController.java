@@ -1,10 +1,16 @@
 package br.com.softplan.sistemadepatrimonio.controller;
 
 
-import java.sql.Connection;
 
+
+import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
+
+import br.com.softplan.sistemadepatrimonio.dao.UsuarioDAO;
 import br.com.softplan.sistemadepatrimonio.model.UsuarioEntity;
+import br.com.softplan.sistemadepatrimonio.util.JpaUtil;
 import br.com.softplan.sistemadepatrimonio.view.LoginView;
+import br.com.softplan.sistemadepatrimonio.view.MenuView;
 
 public class LoginController {
 
@@ -15,15 +21,28 @@ public class LoginController {
 	}
 	
 	
-	public void autenricar() {
+	public void autenticar() {
 		String usuario = view.getTxtUsuario().getText();
 		String senha = view.getTxtSenha().getText();
 		
 		
 		UsuarioEntity usuarioAutenticar = new UsuarioEntity(usuario,senha);
-		 // Connection conexao = new Conexao().get
-		// https://www.youtube.com/watch?v=gbvVh1738z8&list=PLJIP7GdByOyvpQ7EbzucVHocSAG7_EZQZ&index=9		
 		
+		EntityManager em = JpaUtil.getEntityManager();
+		UsuarioDAO usuarioDao = new UsuarioDAO(em);
+		
+		boolean existe = usuarioDao.existeNoBancoPorUsuarioESenha(usuarioAutenticar);
+		
+		if (existe) {
+			
+			MenuView telaMenu = new MenuView();
+			telaMenu.setVisible(true);
+		}else {
+			
+			JOptionPane.showMessageDialog(view, "Usuario ou senha invalidos!");
+		}
+		
+		 
 		
 		
 		

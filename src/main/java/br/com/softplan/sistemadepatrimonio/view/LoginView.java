@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.com.softplan.sistemadepatrimonio.controller.LoginController;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -31,6 +34,7 @@ public class LoginView extends JFrame {
 	private JPanel contentPane;
 	private JPasswordField txtSenha;
 	private JTextField txtUsuario;
+	private LoginController controller;
 
 	/**
 	 * Launch the application.
@@ -53,6 +57,9 @@ public class LoginView extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginView() {
+		//teste
+		controller = new LoginController(this);
+		
 		setUndecorated(true);
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -136,10 +143,11 @@ public class LoginView extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				//verificar o usuario antes de entrar
+	
+				controller.autenticar();
 				
 				
-				MenuView telaMenu = new MenuView();
-				telaMenu.setVisible(true);
 			}
 		});
 		btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
