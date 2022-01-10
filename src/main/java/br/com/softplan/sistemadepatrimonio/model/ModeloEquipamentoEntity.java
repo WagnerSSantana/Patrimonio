@@ -1,7 +1,7 @@
 package br.com.softplan.sistemadepatrimonio.model;
 
 
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 

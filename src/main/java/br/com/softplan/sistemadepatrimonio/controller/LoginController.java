@@ -11,6 +11,7 @@ import br.com.softplan.sistemadepatrimonio.model.UsuarioEntity;
 import br.com.softplan.sistemadepatrimonio.util.JpaUtil;
 import br.com.softplan.sistemadepatrimonio.view.LoginView;
 import br.com.softplan.sistemadepatrimonio.view.MenuView;
+import br.com.softplan.sistemadepatrimonio.view.TelaPrincipalView;
 
 public class LoginController {
 
@@ -21,6 +22,8 @@ public class LoginController {
 	}
 	
 	
+
+
 	public void autenticar() {
 		String usuario = view.getTxtUsuario().getText();
 		String senha = view.getTxtSenha().getText();
@@ -34,8 +37,8 @@ public class LoginController {
 	
 		if (existe) {
 			
-			MenuView telaMenu = new MenuView();
-			telaMenu.setVisible(true);
+			TelaPrincipalView telaPrincipal = new TelaPrincipalView();
+			telaPrincipal.setVisible(true);
 		}else {
 			
 			JOptionPane.showMessageDialog(view, "Usuario ou senha invalidos!");

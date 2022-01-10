@@ -172,6 +172,16 @@ public class LoginView extends JFrame {
 		btnEntrar.setBorderPainted(false);
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		
+		JLabel lblNewLabel = new JLabel("Usu\u00E1rio :");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(60, 115, 80, 20);
+		panel_1.add(lblNewLabel);
+		
+		JLabel lblSenha = new JLabel("Senha :");
+		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblSenha.setBounds(60, 182, 80, 20);
+		panel_1.add(lblSenha);
 	}
 
 	public JPasswordField getTxtSenha() {
@@ -189,6 +199,4 @@ public class LoginView extends JFrame {
 	public void setTxtUsuario(JTextField txtUsuario) {
 		this.txtUsuario = txtUsuario;
 	}
-	
-	
 }
