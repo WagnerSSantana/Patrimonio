@@ -23,10 +23,9 @@ public class Teste {
 //		SetorEntity ObjSetor = new SetorEntity();
 //		TipoEquipamentoEntity ObjTipoEquipamento = new TipoEquipamentoEntity();
 		
-		
-		UsuarioEntity ObjUsuario = new UsuarioEntity("Wagner","123456");
 		EntityManager em = JpaUtil.getEntityManager();
 		UsuarioDAO usuarioDAO = new UsuarioDAO(em);
+		UsuarioEntity ObjUsuario = new UsuarioEntity("Wagner","123456");
 		
 		
 		em.getTransaction().begin();

@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -16,7 +18,7 @@ public class MovimentacaoEntity {
 	
 	@Id
 	@Column (name = "idMovimentacao")
-	@Enumerated (EnumType.STRING)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column (name = "date_inicio")
 	private LocalDate dataInicial = LocalDate.now();

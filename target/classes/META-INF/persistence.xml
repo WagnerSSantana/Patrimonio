@@ -5,21 +5,26 @@
     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="sistemadepatrimonio" transaction-type="RESOURCE_LOCAL">
-	
- 
+	<persistence-unit name="sistemadepatrimonio"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/sistemadepatrimonio?useSSL=false&amp;serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost/sistemadepatrimonio?useSSL=false&amp;serverTimezone=UTC" />
 
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user" value="wagner" />
-			<property name="javax.persistence.jdbc.password" value="santanaws" />
+			<property name="javax.persistence.jdbc.password"
+				value="santanaws" />
 
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 
 			<!-- https://docs.jboss.org/hibernate/orm/5.4/javadocs/org/hibernate/dialect/package-summary.html -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
 		</properties>
 
 	</persistence-unit>

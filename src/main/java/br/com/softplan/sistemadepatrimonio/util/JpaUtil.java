@@ -1,4 +1,4 @@
-package br.com.softplan.sistemadepatrimonio.util;
+ package br.com.softplan.sistemadepatrimonio.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class JpaUtil {
 	
-	private static final EntityManagerFactory FACTORY = Persistence.createEntityManagerFactory("SistemaPatrimonial");
+	private static final EntityManagerFactory FACTORY = Persistence.createEntityManagerFactory("sistemadepatrimonio");
 	
 	public static EntityManager getEntityManager () {
 		return FACTORY.createEntityManager();

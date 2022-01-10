@@ -27,12 +27,11 @@ public class LoginController {
 		
 		
 		UsuarioEntity usuarioAutenticar = new UsuarioEntity(usuario,senha);
-		
 		EntityManager em = JpaUtil.getEntityManager();
 		UsuarioDAO usuarioDao = new UsuarioDAO(em);
 		
 		boolean existe = usuarioDao.existeNoBancoPorUsuarioESenha(usuarioAutenticar);
-		
+	
 		if (existe) {
 			
 			MenuView telaMenu = new MenuView();
@@ -40,11 +39,7 @@ public class LoginController {
 		}else {
 			
 			JOptionPane.showMessageDialog(view, "Usuario ou senha invalidos!");
-		}
-		
-		 
-		
-		
+		}	
 		
 	}
 	

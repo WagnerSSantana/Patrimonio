@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-
+import javax.swing.JOptionPane;
 
 import br.com.softplan.sistemadepatrimonio.model.UsuarioEntity;
 
@@ -73,10 +73,11 @@ public class UsuarioDAO {
 	
 	public boolean existeNoBancoPorUsuarioESenha(UsuarioEntity usuarioNovo) {
 		String jpql = "select u from UsuarioEntity as u"
-				+ "where u.nome = :pUsuario and u.senha = :pSenha";
+				+ " where u.nome = :pUsuario and u.senha = :pSenha";
 		Query query = em.createQuery(jpql);
 		query.setParameter("pUsuario", usuarioNovo.getNome());
-		query.setParameter("pSenha", usuarioNovo.getNome());
+		
+		query.setParameter("pSenha", usuarioNovo.getSenha());
 		
 		
 		return !retornaListaComBaseNaConsulta(query).isEmpty();

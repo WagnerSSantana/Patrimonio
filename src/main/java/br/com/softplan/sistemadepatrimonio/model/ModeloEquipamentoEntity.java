@@ -1,6 +1,7 @@
 package br.com.softplan.sistemadepatrimonio.model;
 
 
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -9,8 +10,10 @@ public class ModeloEquipamentoEntity {
 
 	
 	private ModeloEntity idModelo;
-
+	
 	private EquipamentoEntity patrimonioEquipamento;
+	
+	
 	
 	
 	public ModeloEntity getIdModelo() {
